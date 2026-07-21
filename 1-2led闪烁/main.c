@@ -19,13 +19,30 @@ void Delay500ms(void)	//@11.0592MHz
 	} while (--i);
 }
 
+/*
+void Delay1ms(unsigned int xms)
+{
+	unsigned char i, j;
+	while (xms)
+	{
+		i = 2;
+		j = 239;
+		do
+		{
+			while (--j);
+		}	while (--i);
+		xms--;
+	}
+}
+
+*/
 void main()
 {
  	
 	while(1)
 	{
 		P2=0xFE;
-		Delay500ms();
+		Delay500ms();//Delay1ms(500)//能有同样效
 		P2=0xFF;
 		Delay500ms();
 	}
